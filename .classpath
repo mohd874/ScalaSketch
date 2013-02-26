@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/scalafx_2.10-1.0.0-M1.jar" sourcepath="lib/scalafx-1.0.0-M1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Oracle/JavaFX 2.2 Runtime/lib/jfxrt.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
