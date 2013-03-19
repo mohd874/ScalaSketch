@@ -3,7 +3,13 @@ package worksheets
 import scala.collection.immutable.Stream
 
 object Test {
-  val s = 9                                       //> s  : Int = 9
+<<<<<<< HEAD
+  val s = 9   
+  val chars = List("!","@","#","$","%","^","&","*",".",
+  								 "~","A","0","X","?","\"","-","'","U",
+  								 "V","T","8","<",">",":"," ").length
+                                                  //> chars  : Int = 25
+                                      //> s  : Int = 9
   
   val list = List(1,2,3,4,5)                      //> list  : List[Int] = List(1, 2, 3, 4, 5)
    
@@ -28,4 +34,10 @@ object Test {
  	}                                         //> stream1  : scala.collection.immutable.Stream[Double] = Stream(0.0, ?)
  	
  	stream1 take 3 last                       //> res3: Double = 4.0
+=======
+  val chars = List("!","@","#","$","%","^","&","*",".",
+  								 "~","A","0","X","?","\"","-","'","U",
+  								 "V","T","8","<",">",":"," ").length
+                                                  //> chars  : Int = 25
+>>>>>>> branch 'master' of https://github.com/mohd874/ScalaSketch.git
 }
