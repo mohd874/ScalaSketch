@@ -1,7 +1,8 @@
-package scala.swing
+package scala.swingTest
 
 import javax.swing.JPanel
 import java.awt.BorderLayout
+import scala.swing._
 
 object ScalaSwingTest extends SimpleSwingApplication{
 

@@ -1,25 +1,31 @@
 package worksheets
 
+import scala.collection.immutable.Stream
+
 object Test {
-  def values(fun: (Int) => Int, low: Int, high: Int) = {
-  	require(low < high)
-  	
-  	low to high map (x => (x,fun(x)))
-  }                                               //> values: (fun: Int => Int, low: Int, high: Int)scala.collection.immutable.Ind
-                                                  //| exedSeq[(Int, Int)]
+  val s = 9                                       //> s  : Int = 9
   
-  val a = values(x => x*x, -5, 5)                 //> a  : scala.collection.immutable.IndexedSeq[(Int, Int)] = Vector((-5,25), (-4
-                                                  //| ,16), (-3,9), (-2,4), (-1,1), (0,0), (1,1), (2,4), (3,9), (4,16), (5,25))
-  1 to 3 reduceLeft (_*_)                         //> res0: Int = 6
+  val list = List(1,2,3,4,5)                      //> list  : List[Int] = List(1, 2, 3, 4, 5)
+   
+  def sum(x: Int, y: Int) = x+y                   //> sum: (x: Int, y: Int)Int
   
-  def unless (condition: Boolean)(block: => Unit) = {
-  	if(!condition) block
-  }                                               //> unless: (condition: Boolean)(block: => Unit)Unit
+  def pow (x: Int) = x*x                          //> pow: (x: Int)Int
   
-  val big = 9                                     //> big  : Int = 9
-  val small = 6                                   //> small  : Int = 6
+  list map (pow)                                  //> res0: List[Int] = List(1, 4, 9, 16, 25)
   
-  unless (big > small) {
-  	println("big is smaller")
-  }
+  for(n <- list) yield n+2                        //> res1: List[Int] = List(3, 4, 5, 6, 7)
+  
+  import scala.sys.process._
+  
+  "java -version" !                               //> java version "1.7.0_05"
+                                                  //| Java(TM) SE Runtime Environment (build 1.7.0_05-b06)
+                                                  //| Java HotSpot(TM) Client VM (build 23.1-b03, mixed mode, sharing)
+                                                  //| res2: Int = 0
+                                                  
+	val stream1: Stream[Double] = {
+	  def loop(v: Double): Stream[Double] = v #:: loop(math.pow(v+1, v+1))
+	  loop(0)
+ 	}                                         //> stream1  : scala.collection.immutable.Stream[Double] = Stream(0.0, ?)
+ 	
+ 	stream1 take 3 last                       //> res3: Double = 4.0
 }

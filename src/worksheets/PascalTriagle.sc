@@ -1,7 +1,7 @@
 package worksheets
 
 object PascalTriagle {
-
+  /*
 	def pascal(r: Int, c: Int): Int = {
 		def pascalTri(i: Int, r: Int, arr: Array[Array[Int]]): Array[Array[Int]] ={
 			if(i == r) arr
@@ -20,24 +20,19 @@ object PascalTriagle {
   	
 		val tri = pascalTri(0, r, new Array[Array[Int]](r))
 		tri(r)(c)
-	}                                         //> pascal: (r: Int, c: Int)Int
-  
-	pascal(3, 2)                              //> java.lang.NegativeArraySizeException
-                                                  //| 	at worksheets.PascalTriagle$$anonfun$main$1.generateRow$1(worksheets.Pas
-                                                  //| calTriagle.scala:16)
-                                                  //| 	at worksheets.PascalTriagle$$anonfun$main$1.pascalTri$1(worksheets.Pasca
-                                                  //| lTriagle.scala:9)
-                                                  //| 	at worksheets.PascalTriagle$$anonfun$main$1.pascal$1(worksheets.PascalTr
-                                                  //| iagle.scala:19)
-                                                  //| 	at worksheets.PascalTriagle$$anonfun$main$1.apply$mcV$sp(worksheets.Pasc
-                                                  //| alTriagle.scala:23)
-                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$$anonfun$$exe
-                                                  //| cute$1.apply$mcV$sp(WorksheetSupport.scala:76)
-                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$.redirected(W
-                                                  //| orksheetSupport.scala:65)
-                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$.$execute(Wor
-                                                  //| ksheetSupport.scala:75)
-                                                  //| 	at worksheets.PascalTriagle$.main(worksheets.PascalTriagle.scala:3)
-                                                  //| 	at worksheets.PascalTriagle.main(worksheets.PascalTriagle.scala)
-  
+	}  */
+  def pascal(r: Int, c: Int) = {
+		def nextRow(r: Array[Int], i: Int): Array[Int] = {
+			if(i == 0) r
+			else{
+				val a = r ++: Array(0)
+	      val b = Array(0) ++: r
+	      nextRow(a zip b map (x => x._1 + x._2), i-1)
+      }
+		}
+    nextRow(Array(1), r)(c)
+  }                                               //> pascal: (r: Int, c: Int)Int
+
+  pascal(3, 2)                                    //> res0: Int = 3
+
 }
